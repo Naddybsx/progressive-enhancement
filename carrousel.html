@@ -63,7 +63,7 @@
 			<li><blockquote>“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”</blockquote></li>
 		</ul>
 
-		<nav aria-label="Carrousel navigatie">
+		<nav aria-label="Carrousel navigatie" hidden>
 			<button id="next" class="fdnd-button">Volgende</button>
 			<button id="prev" class="fdnd-button">Vorige</button>
 		</nav>
@@ -100,6 +100,8 @@
 				scrollToItem(currentIndex - 1)
 			  }
 			})
+			// PE: Pas navigatie tonen als JavaScript werkt
+			nav.hidden = false
 		</script>	  
 	</body>
 
