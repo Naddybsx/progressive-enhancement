@@ -63,11 +63,44 @@
 			<li><blockquote>“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”</blockquote></li>
 		</ul>
 
+		<nav aria-label="Carrousel navigatie">
+			<button id="next" class="fdnd-button">Volgende</button>
+			<button id="prev" class="fdnd-button">Vorige</button>
+		</nav>
+
 		<details open>
 			<summary>Demo video</summary>
 			<video src="assets/carrousel.mp4" width="1298" height="469" controls muted loop>
 				<a href="assets/carrousel.mp4">assets/carrousel.mp4</a>
 			</video>
 		</details>
+
+		<script>
+			const carousel = document.querySelector('.carousel')
+			const items = carousel.querySelectorAll('li')
+			const nav = document.querySelector('nav[aria-label="Carrousel navigatie"]')
+			const next = document.querySelector('#next')
+			const prev = document.querySelector('#prev')
+		  
+			let currentIndex = 0
+		  
+			function scrollToItem(index) {
+			  items[index].scrollIntoView({ behavior: 'smooth', inline: 'start' })
+			  currentIndex = index
+			}
+		  
+			next.addEventListener('click', () => {
+			  if (currentIndex < items.length - 1) {
+				scrollToItem(currentIndex + 1)
+			  }
+			})
+		  
+			prev.addEventListener('click', () => {
+			  if (currentIndex > 0) {
+				scrollToItem(currentIndex - 1)
+			  }
+			})
+		</script>	  
 	</body>
+
 </html>
